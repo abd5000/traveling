@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myadmin.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addTrip2"
+            app:destination="@id/addTrip2"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_theTrips"
+            app:destination="@id/theTrips" />
+        <action
+            android:id="@+id/action_homeFragment_to_trackingFragment"
+            app:destination="@id/trackingFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tripsEditOrRemoveFragment"
+            app:destination="@id/tripsEditOrRemoveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tripsEditOrRemoveFragment"
+        android:name="com.example.myadmin.home.edittrips.editeordelettrips.TripsEditOrRemoveFragment"
+        android:label="fragment_trips_edit_or_remove"
+        tools:layout="@layout/fragment_trips_edit_or_remove" >
+
+        <action
+            android:id="@+id/action_tripsEditOrRemoveFragment_to_saveChanges"
+            app:destination="@id/saveChanges"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveChanges"
+        android:name="com.example.myadmin.home.edittrips.editeordelettrips.savechenge.SaveChanges"
+        android:label="fragment_save_changes"
+        tools:layout="@layout/fragment_save_changes" >
+
+        <action
+            android:id="@+id/action_saveChanges_to_tripsEditOrRemoveFragment"
+            app:destination="@id/tripsEditOrRemoveFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/tripsEditOrRemoveFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="trip"
+            app:argType="com.example.myadmin.home.showtrips.availabletrips.Data" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addTrip2"
+        android:name="com.example.myadmin.home.addtrip.AddTrip2"
+        android:label="fragment_add_trip2"
+        tools:layout="@layout/fragment_add_trip2" />
+    <fragment
+        android:id="@+id/theTrips"
+        android:name="com.example.myadmin.home.showtrips.TheTrips"
+        android:label="fragment_the_trips"
+        tools:layout="@layout/fragment_the_trips" >
+        <action
+            android:id="@+id/action_theTrips_to_detailsTripFragment"
+            app:destination="@id/detailsTripFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/theTrips" />
+        <action
+            android:id="@+id/action_theTrips_to_reserveSeats"
+            app:destination="@id/reserveSeats"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/theTrips" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsTripFragment"
+        android:name="com.example.myadmin.home.showtrips.detailstrips.CustomerTripFragment"
+        android:label="fragment_details_trip"
+        tools:layout="@layout/fragment_details_trip" >
+
+        <argument
+            android:name="trip"
+            app:argType="com.example.myadmin.home.showtrips.availabletrips.Data" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/reserveSeats"
+        android:name="com.example.myadmin.home.showtrips.reserve.ReserveSeats"
+        android:label="fragment_reserve_seats"
+        tools:layout="@layout/fragment_reserve_seats" >
+          <action
+            android:id="@+id/action_reserveSeats_to_theTrips"
+            app:destination="@id/theTrips"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/theTrips"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_reserveSeats_to_reserveByAdminFragment"
+            app:destination="@id/reserveByAdminFragment" />
+        <argument
+            android:name="trip"
+            app:argType="com.example.myadmin.home.showtrips.reserve.completereserve.Data" />
+    </fragment>
+    <fragment
+        android:id="@+id/reserveByAdminFragment"
+        android:name="com.example.myadmin.home.showtrips.reserve.completereserve.ReserveByAdminFragment"
+        android:label="fragment_reserve_by_admin"
+        tools:layout="@layout/fragment_reserve_by_admin" >
+        <argument
+            android:name="trip"
+            app:argType="com.example.myadmin.home.showtrips.reserve.completereserve.Data" />
+
+        <argument
+            android:name="numberSeats"
+            app:argType="integer[]" />
+        <action
+            android:id="@+id/action_reserveByAdminFragment_to_theTrips"
+            app:destination="@id/theTrips"
+            app:popUpTo="@id/theTrips"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/usersAndBuss"
+        android:name="com.example.myadmin.usersandbuss.UsersAndBuss"
+        android:label="fragment_users_and_buss"
+        tools:layout="@layout/fragment_users_and_buss" >
+        <action
+            android:id="@+id/action_usersAndBuss_to_usersFragment"
+            app:destination="@id/usersFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/usersAndBuss" />
+        <action
+            android:id="@+id/action_usersAndBuss_to_addBusFragment"
+            app:destination="@id/addBusFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/usersAndBuss" />
+        <action
+            android:id="@+id/action_usersAndBuss_to_deleteBusFragment"
+            app:destination="@id/deleteBusFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/usersAndBuss" />
+        <action
+            android:id="@+id/action_usersAndBuss_to_addDriverFragment"
+            app:destination="@id/addDriverFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/usersAndBuss" />
+        <action
+            android:id="@+id/action_usersAndBuss_to_deleteDriverFragment2"
+            app:destination="@id/deleteDriverFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/usersAndBuss" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.myadmin.usersandbuss.users.UsersFragment"
+        android:label="fragment_users"
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_usersFragment_to_detelsTripCustomerFragment"
+            app:destination="@id/detelsTripCustomerFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/usersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBusFragment"
+        android:name="com.example.myadmin.usersandbuss.addbuss.AddBusFragment"
+        android:label="fragment_add_bus"
+        tools:layout="@layout/fragment_add_bus" />
+    <fragment
+        android:id="@+id/deleteBusFragment"
+        android:name="com.example.myadmin.usersandbuss.deletebus.DeleteBusFragment"
+        android:label="fragment_delete_bus"
+        tools:layout="@layout/fragment_delete_bus" >
+        <action
+            android:id="@+id/action_deleteBusFragment_to_editeBusFragment"
+            app:destination="@id/editeBusFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDriverFragment"
+        android:name="com.example.myadmin.usersandbuss.addDriver.AddDriverFragment"
+        android:label="fragment_add_driver"
+        tools:layout="@layout/fragment_add_driver" />
+    <fragment
+        android:id="@+id/deleteDriverFragment"
+        android:name="com.example.myadmin.usersandbuss.deleteDriver.DeleteDriverFragment"
+        android:label="fragment_delete_driver"
+        tools:layout="@layout/fragment_delete_driver" />
+    <fragment
+        android:id="@+id/detelsTripCustomerFragment"
+        android:name="com.example.myadmin.usersandbuss.users.toReview.detelsTrips.DetelsTripCustomerFragment"
+        android:label="fragment_detels_trip_customer"
+        tools:layout="@layout/fragment_detels_trip_customer" >
+        <argument
+            android:name="customer"
+            app:argType="com.example.myadmin.usersandbuss.users.toReview.Data" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.example.myadmin.home.tracking.TrackingFragment"
+        android:label="fragment_tracking"
+        tools:layout="@layout/fragment_tracking" >
+        <action
+            android:id="@+id/action_trackingFragment_to_mapsFragment2"
+            app:destination="@id/mapsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/editeBusFragment"
+        android:name="com.example.myadmin.usersandbuss.deletebus.editeBus.EditeBusFragment"
+        android:label="fragment_edite_bus"
+        tools:layout="@layout/fragment_edite_bus" >
+        <argument
+            android:name="bus"
+            app:argType="com.example.myadmin.usersandbuss.deletebus.allbuss.Data" />
+        <action
+            android:id="@+id/action_editeBusFragment_to_deleteBusFragment"
+            app:destination="@id/deleteBusFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/deleteBusFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment2"
+        android:name="com.example.myadmin.MapsFragment2"
+        android:label="fragment_maps2"
+        tools:layout="@layout/fragment_maps2" >
+        <argument
+            android:name="diverId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.myadmin.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_navigation"
+            app:destination="@id/navigation"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <include app:graph="@navigation/login_nav" />
+</navigation>

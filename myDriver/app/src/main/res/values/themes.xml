@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyDriver" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:textColorHighlight">@color/blue_click</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="bottomAppBarStyle">@color/white</item>
+
+    </style>
+
+    <style name="Theme.MyDriver" parent="Base.Theme.MyDriver" />
+</resources>

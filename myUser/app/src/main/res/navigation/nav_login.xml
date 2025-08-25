@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_login"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.mytestnav.splash_and_viewpager.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_viewBagirFragment"
+            app:destination="@id/viewBagirFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_welcoamFragment"
+            app:destination="@id/welcoamFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/viewBagirFragment"
+        android:name="com.example.mytestnav.splash_and_viewpager.ViewBagirFragment"
+        android:label="fragment_view_bagir"
+        tools:layout="@layout/fragment_view_bagir" >
+
+
+        <action
+            android:id="@+id/action_viewBagirFragment_to_welcoamFragment"
+            app:destination="@id/welcoamFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/viewBagirFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.mytestnav.login.loginInformation.Login"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/signup"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/welcoamFragment" />
+        <action
+            android:id="@+id/action_login_to_forgetThePassword"
+            app:destination="@id/forgetThePassword"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/login" />
+        <action
+            android:id="@+id/action_login_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.example.mytestnav.login.signupinfomation.Signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/welcoamFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_signup_to_confirmEmail"
+            app:destination="@id/confirmEmail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmEmail"
+        android:name="com.example.mytestnav.login.confirmtheemail.confirmsignup.ConfirmEmail"
+        android:label="fragment_confirm_email"
+        tools:layout="@layout/fragment_confirm_email" >
+
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_confirmEmail_to_homeActivity"
+            app:destination="@id/homeActivity" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <argument
+            android:name="configPassword"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetThePassword"
+        android:name="com.example.mytestnav.login.forgetpassword.sendEmail.ForgetThePassword"
+        android:label="fragment_forget_the_password"
+        tools:layout="@layout/fragment_forget_the_password" >
+        <action
+            android:id="@+id/action_forgetThePassword_to_forgetConfirmFragment"
+            app:destination="@id/forgetConfirmFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/forgetThePassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcoamFragment"
+        android:name="com.example.mytestnav.login.WelcoamFragment"
+        android:label="fragment_welcoam"
+        tools:layout="@layout/fragment_welcoam" >
+        <action
+            android:id="@+id/action_welcoamFragment_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/welcoamFragment" />
+        <action
+            android:id="@+id/action_welcoamFragment_to_signup"
+            app:destination="@id/signup"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/welcoamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPassword"
+        android:name="com.example.mytestnav.login.forgetpassword.newpass.NewPassword"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" >
+
+
+        <action
+            android:id="@+id/action_newPassword_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/welcoamFragment" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.mytestnav.home.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/forgetConfirmFragment"
+        android:name="com.example.mytestnav.login.forgetpassword.codeconfirm.ForgetConfirmFragment"
+        android:label="fragment_forget_confirm"
+        tools:layout="@layout/fragment_forget_confirm" >
+        <action
+            android:id="@+id/action_forgetConfirmFragment_to_newPassword"
+            app:destination="@id/newPassword"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/forgetThePassword"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+    </fragment>
+</navigation>

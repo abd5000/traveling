@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "987614129574",
+    "project_id": "myfcm-7c5fd",
+    "storage_bucket": "myfcm-7c5fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987614129574:android:66311f0e4f81a17215f367",
+        "android_client_info": {
+          "package_name": "com.example.myadmin.home.tracking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDND9WMwF6nYNCNzrnmJetfWoTDElh2JOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987614129574:android:a7ac9f274428c94615f367",
+        "android_client_info": {
+          "package_name": "com.example.mytestnav"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDND9WMwF6nYNCNzrnmJetfWoTDElh2JOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

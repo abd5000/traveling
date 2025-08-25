@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Mytestnav" parent="Theme.Material3.DayNight">
+
+        <!-- Customize your light theme here. -->
+
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:textColorHighlight">@color/blue_click</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="bottomAppBarStyle">@color/white</item>
+
+        
+
+    </style>
+    <style name="FloatingActionButtonStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabShapeStyle</item>
+    </style>
+    <style name="ThemeOverlay.App.DatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorOnPrimary">@color/blue</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorSurface">@color/blue</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+    </style>
+    <style name="ThemeOverlay.App.MaterialCalender4" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorSurface">@color/white</item>
+    </style>
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="Theme.Mytestnav" parent="Base.Theme.Mytestnav" />
+<style name="FabShapeStyle" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <item name="cornerSize">50%</item>
+    <item name="cornerFamily">cut</item>
+</style>
+
+
+
+</resources>

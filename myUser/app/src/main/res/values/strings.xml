@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Traveling</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="city_1">adlip</string>
+    <string name="city_2">syria</string>
+    <string name="city_3">aleppo</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#2196F3</color>
+    <color name="colocr_text_skip">#6C6A6A</color>
+    <color name="dark_blue">#122BB1</color>
+    <color name="red">#E80A1D</color>
+    <color name="blue_click">#9FC9EC</color>
+    <color name="ligt_blue">#B1DAFA</color>
+    <color name="dark_blue_extra">#081B53</color>
+    <color name="Backgrond">#DFE4E8</color>
+    <color name="backgrond">#DFE4E8</color>
+    <color name="light_red">#DDC4C7</color>
+
+</resources>

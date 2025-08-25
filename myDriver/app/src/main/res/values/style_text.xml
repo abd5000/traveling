@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextViewWithRedHandlers" >
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="android:textColorHint">@color/blue</item>
+    </style>
+</resources>

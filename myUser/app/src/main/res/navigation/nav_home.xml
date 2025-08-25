@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/theHomeFragment">
+
+    <fragment
+        android:id="@+id/profile2"
+        android:name="com.example.mytestnav.profily.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile2_to_nav_login"
+            app:destination="@id/nav_login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/theHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profile2_to_notificationActivity"
+            app:destination="@id/notificationActivity"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/myBook2"
+        android:name="com.example.mytestnav.mybook.MyBook"
+        android:label="fragment_my_book"
+        tools:layout="@layout/fragment_my_book" >
+
+        <action
+            android:id="@+id/action_myBook2_to_notPaidDetails"
+            app:destination="@id/notPaidDetails"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/myBook2" />
+        <action
+            android:id="@+id/action_myBook2_to_paidDetails"
+            app:destination="@id/paidDetails"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/theHomeFragment"
+        android:name="com.example.mytestnav.home.TheHomeFragment"
+        android:label="fragment_the_home"
+        tools:layout="@layout/fragment_the_home" >
+        <action
+            android:id="@+id/action_theHomeFragment_to_theTrips"
+            app:destination="@id/theTrips"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/theTrips"
+        android:name="com.example.mytestnav.trips.TheTrips"
+        android:label="fragment_the_trips"
+        tools:layout="@layout/fragment_the_trips" >
+        <action
+            android:id="@+id/action_theTrips_to_reserve"
+            app:destination="@id/reserve"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/theTrips" />
+        <argument
+            android:name="cityFrom"
+            app:argType="string" />
+        <argument
+            android:name="cityTo"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="idFrom"
+            app:argType="integer" />
+        <argument android:name="idTo"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/reserve"
+        android:name="com.example.mytestnav.chosetheSeats.Reserve"
+        android:label="fragment_reserve"
+        tools:layout="@layout/fragment_reserve" >
+        <argument
+            android:name="nameCompany"
+            app:argType="string" />
+        <argument
+            android:name="cityFrom"
+            app:argType="string" />
+        <argument
+            android:name="cityTo"
+            app:argType="string" />
+        <argument
+            android:name="NumberSeat"
+            app:argType="integer[]" />
+        <argument
+            android:name="price"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_reserve_to_confirmReserve"
+            app:destination="@id/confirmReserve"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/reserve"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="time"
+            app:argType="string" />
+        <argument
+            android:name="busNumber"
+            app:argType="integer" />
+        <argument
+            android:name="arraivTime"
+            app:argType="string" />
+        <argument
+            android:name="typeTrip"
+            app:argType="string" />
+        <argument android:name="tripId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmReserve"
+        android:name="com.example.mytestnav.reserve.ConfirmReserve"
+        android:label="fragment_confirm_reserve"
+        tools:layout="@layout/fragment_confirm_reserve" >
+        <argument
+            android:name="cityFrom"
+            app:argType="string" />
+        <argument
+            android:name="cityTo"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="time"
+            app:argType="string" />
+        <argument
+            android:name="company"
+            app:argType="string" />
+        <argument android:name="busNumber"
+            app:argType="integer" />
+        <argument android:name="seatPrice"
+            app:argType="integer" />
+        <argument
+            android:name="reservedSeats"
+            app:argType="integer[]" />
+        <argument
+            android:name="tripId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_confirmReserve_to_theHomeFragment"
+            app:destination="@id/theHomeFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/theHomeFragment"
+            app:popUpToInclusive="true" />
+
+
+
+    </fragment>
+    <argument
+        android:name="cityFrom"
+        app:argType="string" />
+    <fragment
+        android:id="@+id/paidDetails"
+        android:name="com.example.mytestnav.mybook.paid.details.PaidDetails"
+        android:label="fragment_paid_details"
+        tools:layout="@layout/fragment_paid_details" >
+        <argument
+            android:name="cityFrom"
+            app:argType="string" />
+        <argument
+            android:name="cityTo"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="timeTrip"
+            app:argType="string" />
+        <argument
+            android:name="company"
+            app:argType="string" />
+        <argument
+            android:name="busNumper"
+            app:argType="integer" />
+        <argument
+            android:name="price"
+            app:argType="integer" />
+        <argument
+            android:name="numberSeats"
+            app:argType="integer[]" />
+        <argument android:name="typeTrip"
+            app:argType="string" />
+        <argument android:name="tripId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/notPaidDetails"
+        android:name="com.example.mytestnav.mybook.notpaid.details.NotPaidDetails"
+        android:label="fragment_not_paid_details"
+        tools:layout="@layout/fragment_not_paid_details" >
+        <argument
+            android:name="cityFrom"
+            app:argType="string" />
+        <argument
+            android:name="cityTo"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="timeTrip"
+            app:argType="string" />
+        <argument
+            android:name="company"
+            app:argType="string" />
+        <argument
+            android:name="busNumper"
+            app:argType="integer" />
+        <argument
+            android:name="price"
+            app:argType="integer" />
+        <argument
+            android:name="numberSeats"
+            app:argType="integer[]" />
+        <argument android:name="typeTrip"
+            app:argType="string" />
+        <argument android:name="tripId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_notPaidDetails_to_myBook2"
+            app:destination="@id/myBook2"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/myBook2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <include app:graph="@navigation/nav_login" />
+    <activity
+        android:id="@+id/notificationActivity"
+        android:name="com.example.mytestnav.profily.NotificationActivity"
+        android:label="activity_notification"
+        tools:layout="@layout/activity_notification" />
+</navigation>
