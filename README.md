@@ -1,9 +1,9 @@
-# Traveling Delivery System (Kotlin)
+# Traveling System (Kotlin)
 
-نظام توصيل متكامل مكوّن من **3 تطبيقات أندرويد** (كوتلن):
+نظام حجز متكامل مكوّن من **3 تطبيقات أندرويد** (كوتلن):
 - 🛠️ **myAdmin**: لوحة تحكم الأدمن لإدارة الطلبات والسائقين والمستخدمين.
-- 🚗 **myDriver**: تطبيق السائق لاستقبال الطلبات وتتبع الرحلات.
-- 📱 **myUser**: تطبيق المستخدم لطلب الرحلات/الخدمات وتتبع السائق.
+- 🚗 **myDriver**: تطبيق السائق لارسال الموقع بالوقت الحقيقي وعرض معلومات الرحلة.
+- 📱 **myUser**: تطبيق المستخدم لحجز مقاعد في الحافلة  .
 
 ---
 
@@ -63,6 +63,6 @@ traveling/
 ---
 
 ## 🌍 English (brief)
-A 3-app Android delivery system in Kotlin: **Admin**, **Driver**, and **User**.  
+A 3-app Android travel system in Kotlin: **Admin**, **Driver**, and **User**.  
 Tech: MVVM, LiveData, Coroutines, Retrofit2, FCM notifications, Google Maps, real-time tracking via Socket.IO.  
 Backend: **Node.js** (not included in this repo).
